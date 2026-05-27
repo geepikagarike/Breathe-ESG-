@@ -1,0 +1,7 @@
+MaterialDocument,MaterialDocumentItem,Plant,PostingDate,Material,MaterialDescription,MovementType,QuantityInEntryUnit,EntryUnit,AmountInCompanyCodeCurrency,CompanyCodeCurrency,GLAccount,ProcurementCategory
+4900021060,0001,1000,2026-01-18,DIESEL-BULK,Diesel fuel for backup generator,201,1250,L,,,540100,Fuel
+4900021061,0001,DE01,18.02.2026,NATGAS-M3,Natural gas for process heat,201,820,m3,,,540110,Fuel
+4900021062,0001,1000,2026/02/28,STEEL-COIL,Steel coil procurement,101,2450,kg,,,500200,Raw materials
+4900021063,0001,,2026-03-01,DIESEL-BULK,Diesel missing plant lookup,201,300,L,,,540100,Fuel
+4900021064,0001,NYC1,2026-03-12,LAPTOP-STD,Laptops and peripherals,101,12,EA,18500,USD,610050,IT equipment
+

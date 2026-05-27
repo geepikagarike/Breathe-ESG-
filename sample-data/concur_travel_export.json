@@ -1,0 +1,73 @@
+{
+  "data": [
+    {
+      "id": "trip-2026-001",
+      "travelerEmail": "maya.rao@acme.example",
+      "businessPurpose": "Investor roadshow",
+      "startDate": "2026-02-10",
+      "endDate": "2026-02-15",
+      "segments": [
+        {
+          "type": "air",
+          "StartCityCode": "SFO",
+          "EndCityCode": "JFK",
+          "Carrier": "UA",
+          "FlightNum": "UA114",
+          "Cabin": "economy",
+          "startDate": "2026-02-10",
+          "endDate": "2026-02-10"
+        },
+        {
+          "type": "hotel",
+          "vendor": "Marriott",
+          "country": "US",
+          "nights": 4,
+          "startDate": "2026-02-10",
+          "endDate": "2026-02-14"
+        },
+        {
+          "type": "ground",
+          "mode": "taxi",
+          "distanceKm": 38,
+          "startDate": "2026-02-11",
+          "endDate": "2026-02-11"
+        }
+      ]
+    },
+    {
+      "id": "trip-2026-002",
+      "travelerEmail": "alex.ng@acme.example",
+      "businessPurpose": "Supplier audit",
+      "startDate": "2026-03-03",
+      "endDate": "2026-03-08",
+      "segments": [
+        {
+          "type": "air",
+          "StartCityCode": "BLR",
+          "EndCityCode": "FRA",
+          "Carrier": "LH",
+          "FlightNum": "LH755",
+          "Cabin": "business",
+          "distanceKm": 7400,
+          "startDate": "2026-03-03",
+          "endDate": "2026-03-03"
+        },
+        {
+          "type": "rail",
+          "mode": "rail",
+          "distanceKm": 410,
+          "startDate": "2026-03-04",
+          "endDate": "2026-03-04"
+        },
+        {
+          "type": "hotel",
+          "vendor": "Motel One",
+          "country": "DE",
+          "startDate": "2026-03-03",
+          "endDate": "2026-03-08"
+        }
+      ]
+    }
+  ]
+}
+

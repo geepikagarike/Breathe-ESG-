@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: breathe-esg-api
+    env: python
+    rootDir: backend
+    buildCommand: "pip install -r requirements.txt && python manage.py migrate && python manage.py seed_demo && python manage.py collectstatic --noinput"
+    startCommand: "gunicorn breathe.wsgi:application"
+    envVars:
+      - key: DEBUG
+        value: "0"
+      - key: CORS_ALLOW_ALL_ORIGINS
+        value: "1"
+      - key: SECRET_KEY
+        generateValue: true
+  - type: static
+    name: breathe-esg-web
+    rootDir: frontend
+    buildCommand: "npm install && npm run build"
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_BASE_URL
+        value: "https://breathe-esg-api.onrender.com"

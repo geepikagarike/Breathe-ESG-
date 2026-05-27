@@ -1,0 +1,6 @@
+account_number,meter_id,facility_code,service_address,billing_period_start,billing_period_end,read_start,read_end,usage,unit,demand_kw,tariff,total_charges,currency
+U-88291,MTR-1000-A,1000,"45500 Fremont Blvd, Fremont CA",2026-01-05,2026-02-04,120450,168980,48530,kWh,890,TOU-GS3,7032.48,USD
+U-88291,MTR-1000-A,1000,"45500 Fremont Blvd, Fremont CA",2026-02-05,2026-03-06,168980,219440,50460,kWh,942,TOU-GS3,7399.12,USD
+U-44109,MTR-NYC1-1,NYC1,"11 W 42nd St, New York NY",2026-01-01,2026-02-28,77800,103320,25520,kWh,108,SC-9,5128.44,USD
+U-55210,MTR-UNK-9,UNKNOWN,"Temporary warehouse",2026-03-01,2026-03-31,2000,2000,0,kWh,0,COMM-LITE,0,USD
+
