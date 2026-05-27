@@ -24,6 +24,7 @@ Also share the repository with:
 - `TRADEOFFS.md`
 - `SOURCES.md`
 - `README.md`
+- `DEPLOYMENT.md`
 - `render.yaml`
 
 Do not manually upload `node_modules`, `.venv`, `.tools`, `.codex-pydeps`, `frontend/dist`, or `backend/db.sqlite3`. They are generated locally and ignored by `.gitignore`.
@@ -54,4 +55,3 @@ I have shared the repository with saurav@breatheesg.com, rahul@breatheesg.com, a
 
 Thanks,
 `<your name>`
-

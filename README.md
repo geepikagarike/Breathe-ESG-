@@ -30,6 +30,13 @@ npm run dev
 
 Open `http://localhost:5173`. The Vite dev server proxies `/api` to Django.
 
+On Windows, you can also run:
+
+```powershell
+.\scripts\run-backend.ps1
+.\scripts\run-frontend.ps1
+```
+
 ## Demo Login
 
 The prototype does not require auth for local review. It records reviewer identity from `X-Analyst-Email`; the React app sends `analyst@breatheesg.com`.
@@ -53,3 +60,5 @@ The prototype does not require auth for local review. It records reviewer identi
 ## Deployment
 
 `render.yaml` defines a Django web service and a React static site. The backend build runs migrations and seeds demo data. After pushing to GitHub, create a Render Blueprint from this repository, then set `VITE_API_BASE_URL` in the static site to the backend URL. A live deployment still needs your Render/GitHub account access.
+
+See `DEPLOYMENT.md` and `SUBMISSION.md` for the exact submission flow.

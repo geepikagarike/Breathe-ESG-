@@ -1,0 +1,48 @@
+# DEPLOYMENT.md
+
+## Fastest path
+
+Use Render Blueprint deployment with `render.yaml`.
+
+1. Push this repository to GitHub.
+2. In Render, choose **New > Blueprint**.
+3. Select the GitHub repository.
+4. Render creates:
+   - `breathe-esg-api`
+   - `breathe-esg-web`
+5. When the backend URL is available, set the frontend environment variable:
+   - `VITE_API_BASE_URL=https://<your-backend-service>.onrender.com`
+6. Redeploy the frontend service.
+
+The backend build command installs dependencies, applies migrations, seeds demo data, and collects static files.
+
+## Local verification commands
+
+Backend:
+
+```powershell
+.\scripts\run-backend.ps1
+```
+
+Frontend, in a second terminal:
+
+```powershell
+.\scripts\run-frontend.ps1
+```
+
+Manual checks:
+
+```powershell
+cd backend
+.\.venv\Scripts\python.exe manage.py test
+
+cd ..\frontend
+npm run build
+```
+
+## Notes for reviewers
+
+- No login is required.
+- Reviewer actions are recorded as `analyst@breatheesg.com`.
+- Click `Seed demo` in the UI if the deployed database is empty.
+
