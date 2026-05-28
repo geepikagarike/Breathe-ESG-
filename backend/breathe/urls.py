@@ -5,7 +5,7 @@ from django.urls import include, path
 from django.urls import re_path
 
 
-FRONTEND_DIST = settings.BASE_DIR.parent / "frontend" / "dist"
+FRONTEND_DIST = settings.BASE_DIR / "frontend_dist"
 
 
 def frontend_index(_request):
