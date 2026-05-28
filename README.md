@@ -2,6 +2,8 @@
 
 Prototype ESG ingestion and analyst review app for SAP fuel/procurement, utility electricity, and corporate travel data.
 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/geepikagarike/Breathe-ESG-)
+
 ## Stack
 
 - Backend: Django + Django REST Framework + SQLite/PostgreSQL-ready models
