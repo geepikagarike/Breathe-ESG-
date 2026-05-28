@@ -8,7 +8,7 @@ from rest_framework.views import APIView
 
 from .demo import ensure_reference_data, seed_demo
 from .models import ActivityRecord, AuditEvent, IngestionBatch, SourceConnector, Tenant
-from .normalization import ingest_content
+from .normalization import RowError, ingest_content
 from .serializers import ActivityRecordSerializer, ActivityUpdateSerializer, IngestionBatchSerializer, TenantSerializer
 
 
@@ -161,10 +161,27 @@ class UploadIngestion(APIView):
             return Response({"detail": "source_type must be sap, utility, or travel"}, status=status.HTTP_400_BAD_REQUEST)
         if not upload:
             return Response({"detail": "file is required"}, status=status.HTTP_400_BAD_REQUEST)
+        filename = upload.name.lower()
+        allowed_extensions = {
+            "sap": (".csv",),
+            "utility": (".csv",),
+            "travel": (".json",),
+        }
+        if not filename.endswith(allowed_extensions[source_type]):
+            expected = ", ".join(allowed_extensions[source_type])
+            return Response(
+                {"detail": f"{source_type} ingestion expects {expected} files. Images, screenshots, PDFs, and HTML files are not supported in this prototype."},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
         connector = SourceConnector.objects.filter(tenant=tenant, source_type=source_type).first()
         if not connector:
             connector = SourceConnector.objects.create(tenant=tenant, source_type=source_type, name=f"{source_type} upload", ingestion_mode="file_upload")
-        batch = ingest_content(tenant, connector, upload.name, upload.read())
+        try:
+            batch = ingest_content(tenant, connector, upload.name, upload.read())
+        except UnicodeDecodeError:
+            return Response({"detail": "Uploaded file is not valid UTF-8 text. Please upload the matching CSV or JSON export."}, status=status.HTTP_400_BAD_REQUEST)
+        except (RowError, ValueError) as exc:
+            return Response({"detail": f"Could not parse uploaded file: {exc}"}, status=status.HTTP_400_BAD_REQUEST)
         return Response(IngestionBatchSerializer(batch).data, status=status.HTTP_201_CREATED)
 
 
@@ -178,4 +195,3 @@ class SeedDemo(APIView):
             },
             status=status.HTTP_201_CREATED,
         )
-

@@ -94,6 +94,13 @@ function App() {
   async function uploadFile(event) {
     event.preventDefault();
     if (!file) return;
+    const allowedExtensions = { sap: [".csv"], utility: [".csv"], travel: [".json"] };
+    const lowerName = file.name.toLowerCase();
+    const allowed = allowedExtensions[sourceType];
+    if (!allowed.some((extension) => lowerName.endsWith(extension))) {
+      setNotice(`${sourceType} upload expects ${allowed.join(" or ")} files. Screenshots/images are not supported.`);
+      return;
+    }
     const form = new FormData();
     form.append("tenant", TENANT);
     form.append("source_type", sourceType);
@@ -330,4 +337,3 @@ function Status({ record }) {
 }
 
 createRoot(document.getElementById("root")).render(<App />);
-
