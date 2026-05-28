@@ -7,12 +7,10 @@ Use Render Blueprint deployment with `render.yaml`.
 1. Push this repository to GitHub.
 2. In Render, choose **New > Blueprint**.
 3. Select the GitHub repository.
-4. Render creates:
-   - `breathe-esg-api`
-   - `breathe-esg-web`
-5. The frontend receives `VITE_API_BASE_URL` automatically from the backend service URL.
-6. Choose the free plan if Render asks. Free services can sleep when idle, but the public URL still works for assignment submission.
-7. Open the frontend URL and click `Seed demo` if the dashboard is empty.
+4. Render creates `breathe-esg-api`.
+5. Choose the free plan if Render asks. Free services can sleep when idle, but the public URL still works for assignment submission.
+6. Open the `breathe-esg-api` URL. It serves the React app at `/` and the API at `/api/`.
+7. Click `Seed demo` if the dashboard is empty.
 
 The backend build command installs dependencies, applies migrations, seeds demo data, and collects static files.
 
@@ -44,4 +42,5 @@ npm run build
 
 - No login is required.
 - Reviewer actions are recorded as `analyst@breatheesg.com`.
+- Deployed app URL: `https://breathe-esg-api-xl9b.onrender.com/`
 - Click `Seed demo` in the UI if the deployed database is empty.

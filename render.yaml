@@ -13,15 +13,3 @@ services:
         value: "1"
       - key: SECRET_KEY
         generateValue: true
-  - type: web
-    name: breathe-esg-web
-    runtime: static
-    rootDir: frontend
-    buildCommand: "npm install && npm run build"
-    staticPublishPath: dist
-    envVars:
-      - key: VITE_API_BASE_URL
-        fromService:
-          type: web
-          name: breathe-esg-api
-          envVarKey: RENDER_EXTERNAL_URL

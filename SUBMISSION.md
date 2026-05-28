@@ -33,13 +33,10 @@ Do not manually upload `node_modules`, `.venv`, `.tools`, `.codex-pydeps`, `fron
 
 1. Push this folder to GitHub.
 2. In Render, create a new Blueprint and select this repository.
-3. Render will create:
-   - `breathe-esg-api`
-   - `breathe-esg-web`
+3. Render will create `breathe-esg-api`.
 4. After the backend deploys, copy its URL.
-5. Set the frontend static site's `VITE_API_BASE_URL` environment variable to the backend URL.
-6. Redeploy the frontend.
-7. Open the frontend URL and click `Seed demo` if the dashboard is empty.
+5. Open that URL. It serves the React app at `/` and the API at `/api/`.
+6. Click `Seed demo` if the dashboard is empty.
 
 Free Render hosting is acceptable for a student submission. The backend can sleep when idle, so the first request may take a little longer to load.
 
@@ -50,7 +47,7 @@ Hi,
 Please find my submission for the Breathe ESG Tech Intern Assignment:
 
 - GitHub repository: `<your GitHub repo URL>`
-- Deployed app: `<your Render/Railway/Fly frontend URL>`
+- Deployed app: `https://breathe-esg-api-xl9b.onrender.com/`
 - Credentials: no login required; reviewer actions are recorded as `analyst@breatheesg.com`
 
 I have shared the repository with saurav@breatheesg.com, rahul@breatheesg.com, and shivang@breatheesg.com.

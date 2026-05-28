@@ -61,6 +61,6 @@ The prototype does not require auth for local review. It records reviewer identi
 
 ## Deployment
 
-`render.yaml` defines a Django web service and a React static site. The backend build runs migrations and seeds demo data. After pushing to GitHub, create a Render Blueprint from this repository, then set `VITE_API_BASE_URL` in the static site to the backend URL. A live deployment still needs your Render/GitHub account access.
+`render.yaml` defines a single free Render web service. Django serves the REST API under `/api/` and the built React app at `/`, so the deployed app URL is the backend service URL. The build runs migrations, seeds demo data, and collects static files.
 
 See `DEPLOYMENT.md` and `SUBMISSION.md` for the exact submission flow.
