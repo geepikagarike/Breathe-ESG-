@@ -1,7 +1,8 @@
 services:
   - type: web
     name: breathe-esg-api
-    env: python
+    runtime: python
+    plan: free
     rootDir: backend
     buildCommand: "pip install -r requirements.txt && python manage.py migrate && python manage.py seed_demo && python manage.py collectstatic --noinput"
     startCommand: "gunicorn breathe.wsgi:application --bind 0.0.0.0:$PORT"
@@ -12,8 +13,10 @@ services:
         value: "1"
       - key: SECRET_KEY
         generateValue: true
-  - type: static
+  - type: web
     name: breathe-esg-web
+    runtime: static
+    plan: free
     rootDir: frontend
     buildCommand: "npm install && npm run build"
     staticPublishPath: dist

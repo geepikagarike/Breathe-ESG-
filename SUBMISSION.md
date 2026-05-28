@@ -41,6 +41,8 @@ Do not manually upload `node_modules`, `.venv`, `.tools`, `.codex-pydeps`, `fron
 6. Redeploy the frontend.
 7. Open the frontend URL and click `Seed demo` if the dashboard is empty.
 
+Free Render hosting is acceptable for a student submission. The backend can sleep when idle, so the first request may take a little longer to load.
+
 ## Suggested email text
 
 Hi,

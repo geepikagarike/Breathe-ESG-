@@ -11,7 +11,7 @@ Use Render Blueprint deployment with `render.yaml`.
    - `breathe-esg-api`
    - `breathe-esg-web`
 5. The frontend receives `VITE_API_BASE_URL` automatically from the backend service URL.
-6. If Render asks you to confirm paid resources, choose a paid web service plan for always-on hosting. Free web services can sleep.
+6. Choose the free plan if Render asks. Free services can sleep when idle, but the public URL still works for assignment submission.
 7. Open the frontend URL and click `Seed demo` if the dashboard is empty.
 
 The backend build command installs dependencies, applies migrations, seeds demo data, and collects static files.
